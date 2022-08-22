@@ -103,15 +103,19 @@ function Animate(rotNum) {
   }
 };
 
-let i = 0;
+let j = 0;
 function iterate() {
   if (i >= lightOrder.length){
-    clearInterval(interval);
+    if (j > 10) {
+      clearInterval(interval);
+    }
     i = 0;
+    j++;
   }
   Animate(i);
   i++;
 }
+let i = 0;
 let interval = setInterval(iterate, 25)
 
 
